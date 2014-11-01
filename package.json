@@ -11,5 +11,16 @@
     "url"
   ],
   "author": "Matthew Daly <matthewbdaly@gmail.com> (http://matthewdaly.co.uk/)",
-  "license": "GPLv2"
+  "license": "GPLv2",
+  "dependencies": {
+    "express": "^4.10.1",
+    "hiredis": "^0.1.17",
+    "jade": "^1.7.0",
+    "redis": "^0.12.1"
+  },
+  "devDependencies": {
+    "chai": "^1.9.2",
+    "mocha": "^2.0.1",
+    "request": "^2.47.0"
+  }
 }
