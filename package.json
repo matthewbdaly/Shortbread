@@ -1,0 +1,15 @@
+{
+  "name": "shortbread",
+  "version": "1.0.0",
+  "description": "A simple URL shortener written with Node.js and using Redis to persist the data",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "shortener",
+    "url"
+  ],
+  "author": "Matthew Daly <matthewbdaly@gmail.com> (http://matthewdaly.co.uk/)",
+  "license": "GPLv2"
+}
