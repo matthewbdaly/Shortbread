@@ -1,4 +1,6 @@
 /*jslint node: true */
+/*global describe: false */
+/*global it: false */
 "use strict";
 
 // Declare the variables used
