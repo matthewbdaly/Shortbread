@@ -4,7 +4,7 @@
   "description": "A simple URL shortener written with Node.js and using Redis to persist the data",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "grunt test"
   },
   "keywords": [
     "shortener",
@@ -20,6 +20,10 @@
   },
   "devDependencies": {
     "chai": "^1.9.2",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-mocha-istanbul": "^2.2.0",
+    "istanbul": "^0.3.2",
     "mocha": "^2.0.1",
     "request": "^2.47.0"
   }
