@@ -16,7 +16,8 @@
     "express": "^4.10.1",
     "hiredis": "^0.1.17",
     "jade": "^1.7.0",
-    "redis": "^0.12.1"
+    "redis": "^0.12.1",
+    "shortid": "^2.1.2"
   },
   "devDependencies": {
     "chai": "^1.9.2",
