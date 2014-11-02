@@ -1,9 +1,14 @@
 doctype html
 html(lang="en")
     head
-        title=Shortbread
+        title="Shortbread"
 
     body
         div.container
             div.row
                 h1 Shortbread
+
+            div.row
+                form(action="/", method="POST")
+                    input(type="url", name="url")
+                    input(type="submit", value="Submit")
