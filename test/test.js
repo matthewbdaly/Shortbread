@@ -1,6 +1,5 @@
 /*jslint node: true */
-/*global describe: false */
-/*global it: false */
+/*global describe: false, before: false, after: false, it: false */
 "use strict";
 
 // Declare the variables used
@@ -10,6 +9,18 @@ var expect = require('chai').expect,
 
 // Server tasks
 describe('server', function () {
+
+    // Beforehand, start the server
+    before(function (done) {
+        console.log('Starting the server');
+        done();
+    });
+
+    // Afterwards, stop the server
+    after(function (done) {
+        console.log('Stopping the server');
+        done();
+    });
 
     // Test the index route
     describe('Test the index route', function () {
