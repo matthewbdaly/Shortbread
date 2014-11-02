@@ -33,4 +33,16 @@ describe('server', function () {
             });
         });
     });
+
+    // Test submitting a URL
+    describe('Test submitting a URL', function () {
+        it('should return the shortened URL', function (done) {
+            request.post('http://localhost:5000', {form: {url: 'http://www.google.co.uk'}}, function (error, response, body) {
+                expect(body).to.include('Your shortened URL is');
+                expect(response.statusCode).to.equal(200);
+                expect(response.headers['content-type']).to.equal('text/html; charset=utf-8');
+                done();
+            });
+        });
+    });
 });
