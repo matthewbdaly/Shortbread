@@ -29,6 +29,7 @@ describe('server', function () {
                 expect(body).to.include('Shortbread');
                 expect(response.statusCode).to.equal(200);
                 expect(response.headers['content-type']).to.equal('text/html; charset=utf-8');
+                done();
             });
         });
     });
