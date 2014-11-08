@@ -5,7 +5,11 @@
 // Declare the variables used
 var expect = require('chai').expect,
     request = require('request'),
-    server = require('../index');
+    server = require('../index'),
+    redis = require('redis'),
+    client;
+client = redis.createClient();
+client.select(1);
 
 // Server tasks
 describe('server', function () {
@@ -16,9 +20,10 @@ describe('server', function () {
         done();
     });
 
-    // Afterwards, stop the server
+    // Afterwards, stop the server and empty the database
     after(function (done) {
         console.log('Stopping the server');
+        client.flushdb();
         done();
     });
 

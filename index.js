@@ -10,6 +10,7 @@ app = express();
 port = process.env.port || 5000;
 redis = require('redis');
 client = redis.createClient();
+client.select(1);
 shortid = require('shortid');
 
 // Set up templating
