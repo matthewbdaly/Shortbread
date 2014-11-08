@@ -50,4 +50,18 @@ describe('server', function () {
             });
         });
     });
+
+    // Test following a URL
+    describe('Test following a URL', function () {
+        it('should redirect the user to the shortened URL', function (done) {
+            // Create the URL
+            client.set('testurl', 'http://www.google.com', function () {
+                // Follow the link
+                request.get('http://localhost:5000/testurl', function (error, response, body) {
+                    expect(response.statusCode).to.equal(301);
+                    expect(response.headers.Location).to.equal('http://www.google.com');
+                });
+            });
+        });
+    });
 });
