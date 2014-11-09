@@ -68,4 +68,19 @@ describe('server', function () {
             });
         });
     });
+
+    // Test non-existent link
+    describe('Test following a non-existent-link', function () {
+        it('should return a 404 error', function (done) {
+            // Follow the link
+            request.get({
+                url: 'http://localhost:5000/nonexistenturl',
+                followRedirect: false
+            }, function (error, response, body) {
+                expect(response.statusCode).to.equal(404);
+                expect(body).to.include('Link not found');
+                done();
+            });
+        });
+    });
 });

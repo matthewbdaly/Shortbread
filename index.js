@@ -55,7 +55,7 @@ app.route('/:id').all(function (req, res) {
 
     // Look up the URL
     client.get(id, function (err, reply) {
-        if (!err) {
+        if (!err && reply) {
             // Redirect user to it
             res.status(301);
             res.set('Location', reply);
