@@ -13,6 +13,7 @@ bodyParser = require('body-parser');
 base_url = process.env.BASE_URL || 'http://localhost:5000';
 
 // Set up connection to Redis
+/* istanbul ignore if */
 if (process.env.REDISTOGO_URL) {
     rtg  = require("url").parse(process.env.REDISTOGO_URL);
     client = require("redis").createClient(rtg.port, rtg.hostname);
