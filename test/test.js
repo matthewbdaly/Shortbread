@@ -9,7 +9,6 @@ var expect = require('chai').expect,
     redis = require('redis'),
     client;
 client = redis.createClient();
-client.select(1);
 
 // Server tasks
 describe('server', function () {

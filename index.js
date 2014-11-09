@@ -10,7 +10,6 @@ app = express();
 port = process.env.port || 5000;
 redis = require('redis');
 client = redis.createClient();
-client.select(1);
 shortid = require('shortid');
 bodyParser = require('body-parser');
 base_url = process.env.BASE_URL || 'http://localhost:5000';
