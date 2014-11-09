@@ -2,7 +2,7 @@
 'use strict';
 
 // Declare variables used
-var app, bodyParser, client, express, port, redis, shortid;
+var app, base_url, bodyParser, client, express, port, redis, shortid;
 
 // Define values
 express = require('express');
@@ -13,11 +13,15 @@ client = redis.createClient();
 client.select(1);
 shortid = require('shortid');
 bodyParser = require('body-parser');
+base_url = process.env.BASE_URL || 'http://localhost:5000';
 
 // Set up templating
 app.set('views', __dirname + '/views');
 app.set('view engine', "jade");
 app.engine('jade', require('jade').__express);
+
+// Set URL
+app.set('base_url', base_url);
 
 // Handle POST data
 app.use(bodyParser.json());
@@ -44,7 +48,7 @@ app.post('/', function (req, res) {
     // Store them in Redis
     client.set(id, url, function () {
         // Display the response
-        res.render('output', { id: id });
+        res.render('output', { id: id, base_url: base_url });
     });
 });
 
