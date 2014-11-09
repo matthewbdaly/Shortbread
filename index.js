@@ -7,7 +7,7 @@ var app, base_url, bodyParser, client, express, port, rtg, shortid;
 // Define values
 express = require('express');
 app = express();
-port = process.env.port || 5000;
+port = process.env.PORT || 5000;
 shortid = require('shortid');
 bodyParser = require('body-parser');
 base_url = process.env.BASE_URL || 'http://localhost:5000';
