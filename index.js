@@ -2,17 +2,24 @@
 'use strict';
 
 // Declare variables used
-var app, base_url, bodyParser, client, express, port, redis, shortid;
+var app, base_url, bodyParser, client, express, port, rtg, shortid;
 
 // Define values
 express = require('express');
 app = express();
 port = process.env.port || 5000;
-redis = require('redis');
-client = redis.createClient();
 shortid = require('shortid');
 bodyParser = require('body-parser');
 base_url = process.env.BASE_URL || 'http://localhost:5000';
+
+// Set up connection to Redis
+if (process.env.REDISTOGO_URL) {
+    rtg  = require("url").parse(process.env.REDISTOGO_URL);
+    client = require("redis").createClient(rtg.port, rtg.hostname);
+    client.auth(rtg.auth.split(":")[1]);
+} else {
+    client = require('redis').createClient();
+}
 
 // Set up templating
 app.set('views', __dirname + '/views');
