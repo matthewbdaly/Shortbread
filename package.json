@@ -14,6 +14,10 @@
     "shortener",
     "url"
   ],
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  },
   "author": "Matthew Daly <matthewbdaly@gmail.com> (http://matthewdaly.co.uk/)",
   "license": "GPLv2",
   "dependencies": {
