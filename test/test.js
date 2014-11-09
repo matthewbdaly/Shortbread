@@ -57,9 +57,13 @@ describe('server', function () {
             // Create the URL
             client.set('testurl', 'http://www.google.com', function () {
                 // Follow the link
-                request.get('http://localhost:5000/testurl', function (error, response, body) {
+                request.get({
+                    url: 'http://localhost:5000/testurl',
+                    followRedirect: false
+                }, function (error, response, body) {
+                    expect(response.headers.location).to.equal('http://www.google.com');
                     expect(response.statusCode).to.equal(301);
-                    expect(response.headers.Location).to.equal('http://www.google.com');
+                    done();
                 });
             });
         });
