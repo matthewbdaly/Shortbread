@@ -3,6 +3,7 @@ Shortbread
 
 [![Build Status](https://travis-ci.org/matthewbdaly/Shortbread.svg?branch=master)](https://travis-ci.org/matthewbdaly/Shortbread)
 [![Coverage Status](https://img.shields.io/coveralls/matthewbdaly/Shortbread.svg)](https://coveralls.io/r/matthewbdaly/Shortbread?branch=master)
+[![Dependencies](https://david-dm.org/matthewbdaly/Shortbread.png)]
 
 A simple URL shortener.
 
