@@ -2,7 +2,7 @@
 'use strict';
 
 // Declare variables used
-var app, base_url, bodyParser, client, express, port, rtg, shortid;
+var app, base_url, bodyParser, client, express, morgan, port, rtg, shortid;
 
 // Define values
 express = require('express');
@@ -11,6 +11,7 @@ port = process.env.PORT || 5000;
 shortid = require('shortid');
 bodyParser = require('body-parser');
 base_url = process.env.BASE_URL || 'http://localhost:5000';
+morgan = require('morgan');
 
 // Set up connection to Redis
 /* istanbul ignore if */
@@ -29,6 +30,9 @@ app.engine('jade', require('jade').__express);
 
 // Set URL
 app.set('base_url', base_url);
+
+// Set up logging
+app.use(morgan('combined'));
 
 // Handle POST data
 app.use(bodyParser.json());
